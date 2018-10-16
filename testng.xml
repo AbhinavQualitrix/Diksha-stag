@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <listeners>
+		<listener class-name="org.generic.TestListener"></listener>
+	</listeners>
+  <test thread-count="1" name="Test">
+    <classes>
+    <!--  
+    
+      <class name="org.testscripts.DeleteTheCreatedContent"/>
+      <class name="org.testscripts.EditBookAndVerify"/>
+     <class name="org.testscripts.EditUploadedContent"/>
+      <class name="org.testscripts.EditResourceAndVerify"/>-->
+      
+       <class name="org.testscripts.CreateQuestionFITBAndVerify"/> 
+       <class name="org.testscripts.CreateQuestionMCQAndVerify"/>
+       <class name="org.testscripts.CreateQuestionMTFAndVerify"/> 
+      
+      <class name="org.testscripts.UploadContentHTML"/>
+      <class name="org.testscripts.UploadContentMP4"/>
+      <class name="org.testscripts.CreatorCourseAndVerify"/>
+     
+      <class name="org.testscripts.CreateCollectionAndVerify"/>
+      <class name="org.testscripts.CreatorResourceAndVerify"/>
+      <class name="org.testscripts.SearchCourseCreateInviteOnlyBatch"/>
+      <class name="org.testscripts.CreateLessonAndVerify"/>
+       
+    
+     <class name="org.testscripts.UploadContentPDF"/>
+    
+       <class name="org.testscripts.CreateAllResource"/>
+       
+      <class name="org.testscripts.ConsumeOpenCourseByPublicUser"/>
+      <class name="org.testscripts.CreatorQuestionAndVerify"/>
+      <class name="org.testscripts.CreateBookAndVerify"/>
+     
+      
+      
+      <class name="org.testscripts.UploadContentH5P"/>
+      <class name="org.testscripts.UploadContentEPUB"/>
+      <class name="org.testscripts.UploadContentYOUTUBE"/>
+      <class name="org.testscripts.UploadContentWEBM"/>
+      
+  
+   
+         
+      
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
