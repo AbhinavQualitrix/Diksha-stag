@@ -4,7 +4,7 @@
 
 * @author: Ajith Manjunath
 
-* Date: 05/25/2018
+* Date: 09/14/2018
 
 * Purpose: Contains all the methods which will help reading the data from excel. 
 */
@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Vector;
 
 import org.apache.log4j.Logger;
-import org.testdata.TestDataForSunbird;
+import org.testdata.TestDataForDiksha;
 
 public class ReadTestDataFromExcel extends GetExcelFileData {
 
@@ -26,16 +26,17 @@ public class ReadTestDataFromExcel extends GetExcelFileData {
 	static Vector<String> data = new Vector<String>();
 	static int noOfRecordsToBeTestedConfig =0, noOfRecordsToBeTested=0;
 
-	public static List <TestDataForSunbird>  getTestDataForSunbird(String callingTestScript) 
+	public static List <TestDataForDiksha>  getTestDataForDiksha(String callingTestScript) 
 	{
-		List <TestDataForSunbird> objListOfTestDataForSunbird = new ArrayList<TestDataForSunbird>();
+		List <TestDataForDiksha> objListOFTestDataForDiksha = new ArrayList<TestDataForDiksha>();
 		int columnIndex = 0, sizeofHeaders = 0; 
 		String columnName = "", dataValue = "";
-		TestDataForSunbird objTDForSunBird = new TestDataForSunbird();
+		TestDataForDiksha objTDForDiksha = new TestDataForDiksha();
 		String testDataPath = "", sheetName = "";
 		try	{
 			ReadTestDataFromExcel.getColumnNames();
 			testDataPath = getTestDataPath(callingTestScript);
+			System.out.println("Checking"+testDataPath);
 			sheetName = getSheetName(callingTestScript);
 			log.info("Method:getTestDataForSearch :: equipmentTestDataPath = " + testDataPath 
 					+ " sheetname = " + sheetName
@@ -59,70 +60,70 @@ public class ReadTestDataFromExcel extends GetExcelFileData {
 					{
 
 						if(columnName.equals(username.trim()))	
-							objTDForSunBird.setUsername(dataValue);
+							objTDForDiksha.setUsername(dataValue);
 						else if(columnName.equals(password.trim()))	
-							objTDForSunBird.setPassword(dataValue);
+							objTDForDiksha.setPassword(dataValue);
 						else if(columnName.equals(firstName.trim()))	
-							objTDForSunBird.setFirstName(dataValue);	
+							objTDForDiksha.setFirstName(dataValue);	
 						else if(columnName.equals(lastName.trim()))	
-							objTDForSunBird.setLastName(dataValue);
+							objTDForDiksha.setLastName(dataValue);
 						else if(columnName.equals(phone.trim()))	
-							objTDForSunBird.setPhone(dataValue);
+							objTDForDiksha.setPhone(dataValue);
 						else if(columnName.equals(email.trim()))	
-							objTDForSunBird.setEmail(dataValue);			
+							objTDForDiksha.setEmail(dataValue);			
 						else if(columnName.equals(role.trim()))	
-							objTDForSunBird.setRole(dataValue);
+							objTDForDiksha.setRole(dataValue);
 						else if(columnName.equals(addresslane1.trim()))
-							objTDForSunBird.setAddressLane1(dataValue);
+							objTDForDiksha.setAddressLane1(dataValue);
 						else if(columnName.equals(addresslane2.trim()))
-							objTDForSunBird.setAddressLane2(dataValue);
+							objTDForDiksha.setAddressLane2(dataValue);
 						else if(columnName.equals(city.trim()))
-							objTDForSunBird.setCity(dataValue);
+							objTDForDiksha.setCity(dataValue);
 						else if(columnName.equals(state.trim()))
-							objTDForSunBird.setState(dataValue);
+							objTDForDiksha.setState(dataValue);
 						else if(columnName.equals(country.trim()))
-							objTDForSunBird.setCountry(dataValue);
+							objTDForDiksha.setCountry(dataValue);
 						else if(columnName.equals(pincode.trim()))
-							objTDForSunBird.setPincode(dataValue);
+							objTDForDiksha.setPincode(dataValue);
 						else if(columnName.equals(executeTest.trim()))	
-							objTDForSunBird.setExecuteTest(dataValue);
+							objTDForDiksha.setExecuteTest(dataValue);
 
 
 						else if(columnName.equals(summary.trim()))	
-							objTDForSunBird.setSummary(dataValue);
+							objTDForDiksha.setSummary(dataValue);
 						else if(columnName.equals(occupation.trim()))	
-							objTDForSunBird.setOccupation(dataValue);
+							objTDForDiksha.setOccupation(dataValue);
 						else if(columnName.equals(designation.trim()))	
-							objTDForSunBird.setDesignation(dataValue);
+							objTDForDiksha.setDesignation(dataValue);
 						else if(columnName.equals(organization.trim()))	
-							objTDForSunBird.setOrganization(dataValue);
+							objTDForDiksha.setOrganization(dataValue);
 						else if(columnName.equals(degree.trim()))	
-							objTDForSunBird.setDegree(dataValue);
+							objTDForDiksha.setDegree(dataValue);
 						else if(columnName.equals(percentage.trim()))	
-							objTDForSunBird.setPercentage(dataValue);
+							objTDForDiksha.setPercentage(dataValue);
 						else if(columnName.equals(grade.trim()))	
-							objTDForSunBird.setGrade(dataValue);
+							objTDForDiksha.setGrade(dataValue);
 						else if(columnName.equals(institution.trim()))	
-							objTDForSunBird.setInstitution(dataValue);
+							objTDForDiksha.setInstitution(dataValue);
 						else if(columnName.equals(board.trim()))	
-							objTDForSunBird.setBoard(dataValue);
+							objTDForDiksha.setBoard(dataValue);
 						else if(columnName.equals(skills.trim()))	
-							objTDForSunBird.setSkills(dataValue);
+							objTDForDiksha.setSkills(dataValue);
 						else if(columnName.equals(afirstName.trim()))	
-							objTDForSunBird.setAfirstName(dataValue);
+							objTDForDiksha.setAfirstName(dataValue);
 						else if(columnName.equals(alastName.trim()))	
-							objTDForSunBird.setAlastName(dataValue);
+							objTDForDiksha.setAlastName(dataValue);
 						else if(columnName.equals(currentlocation.trim()))	
-							objTDForSunBird.setCurrentlocation(dataValue);
+							objTDForDiksha.setCurrentlocation(dataValue);
 
 						else if(columnName.equals(courseName.trim()))	
-							objTDForSunBird.setCourseName(dataValue);
+							objTDForDiksha.setCourseName(dataValue);
 						else if(columnName.equals(courseDescription.trim()))	
-							objTDForSunBird.setCourseDescription(dataValue);
+							objTDForDiksha.setCourseDescription(dataValue);
 						else if(columnName.equals(title.trim()))	
-							objTDForSunBird.setTitle(dataValue);
+							objTDForDiksha.setTitle(dataValue);
 						else if(columnName.equals(titleDescription.trim()))	
-							objTDForSunBird.setTitleDescription(dataValue);
+							objTDForDiksha.setTitleDescription(dataValue);
 						
 
 
@@ -131,10 +132,10 @@ public class ReadTestDataFromExcel extends GetExcelFileData {
 					columnIndex = columnIndex + 1;
 
 					if (columnIndex == sizeofHeaders)	{
-						if ((objTDForSunBird.getExecuteTest().toLowerCase().contains("yes")) == true)
-							objListOfTestDataForSunbird.add(objTDForSunBird);
+						if ((objTDForDiksha.getExecuteTest().toLowerCase().contains("yes")) == true)
+							objListOFTestDataForDiksha.add(objTDForDiksha);
 						columnIndex = 0;
-						objTDForSunBird = new TestDataForSunbird();					
+						objTDForDiksha = new TestDataForDiksha();					
 					}
 				} 
 
@@ -146,8 +147,8 @@ public class ReadTestDataFromExcel extends GetExcelFileData {
 			e.printStackTrace();
 		}
 
-		log.info("Method:getTestDataForSearch :: returning size of test records = " + objListOfTestDataForSunbird.size());	
-		return objListOfTestDataForSunbird;
+		log.info("Method:getTestDataForSearch :: returning size of test records = " + objListOFTestDataForDiksha.size());	
+		return objListOFTestDataForDiksha;
 	}
 
 

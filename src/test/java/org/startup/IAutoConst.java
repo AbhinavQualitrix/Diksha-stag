@@ -1,6 +1,13 @@
 package org.startup;
 
-public interface IAutoConst {
+import org.generic.GenericFunctions;
+import org.openqa.selenium.WebDriver;
+
+public interface IAutoConst 
+{
+
+	//public static WebDriver driver;
+
 
 	//User Roles
 	String PUBLICUSER="PUBLICUSER";
@@ -11,69 +18,96 @@ public interface IAutoConst {
 	String MENTOR="MENTOR";
 	String XPATH="XPATH";
 	String PUBLICUSER1="PUBLICUSER1";
+	String PUBLICUSER2="PUBLICUSER2";
 	String BOOKREVIEWER="BOOKREVIEWER";
 	String AUTOCREATOR="AUTOCREATOR";
-	String ORGADMIND="ORGADMIND";
-	String PUBLICUSERD="PUBLICUSERD";
-	String MENTORD="MENTORD";
-	String MENTORD1="MENTORD1";
-	String REVIEWER1="REVIEWER1";
-	String SUBORGMENTOR="SUBORGMENTOR";
+	String BOOKCREATOR="BOOKCREATOR";
 	String MENTOR_S="MENTOR_S";
 	String REVIEWER_S="REVIEWER_S";
 	String PUBLICUSER_S="PUBLICUSER_S";
 	String MENTORS_S="MENTORS_S";
 	String PUBLICUSERS_S="PUBLICUSERS_S";
-	String CREATOR_S="CREATOR_S";
+	String A_CONTENT_CREATOR="A_CONTENT_CREATOR";
+	String UNAUTHENTIC_USER="UnauthenticUser";
+	String SUBORG_MENTOR="SubOrgMentor";
+
+	String SUBORGMENTOR="SubOrgMentor2";
+	String CUSTODIANUSER="CustodianUser";
+
+	String STATE_TENANT="StateTenant";
+	
+	String CREATORRJ = "CreatorRJ";
+
+	
+	String SUBORG_REVIEWER="SubOrgReviewer";
+	String TENANTORGADMIN ="TenantOrgAdmin";
+	
+	
+	//Adding New user Roles For New Features
+	String TC_TESTUSER="TCTestUser";
+	String FRAMEWORK_TESTUSER="FrameworkUser";
+	String NEWUSER_SECONDTIME="NewUserSecondTime";
+
+	//Nov 23
+	String CREATOR2="CREATOR2";
 
 	//Driver values
 	String CHROME_KEY="webdriver.chrome.driver";
-	String CHROME_VAL="./Drivers/chromedriver";
+	//String CHROME_VAL="./drivers/chromedriver.exe";
+	//LINUX path
+	String CHROME_VAL="drivers/chromedriver";
 	String GECKO_KEY="webdriver.gecko.driver";
-	String GECKO_VAL="./Drivers/geckodriver.exe";
+	String GECKO_VAL="./drivers/geckodriver";
+	//String APP_URL="https://preprod.ntp.net.in";
 	String APP_URL="https://staging.ntp.net.in";
+	//String APP_URL="https://diksha.gov.in";
 	String AUTO_APP_URL="http://qatestautomation.centralus.cloudapp.azure.com";
-
 	
+
 	//Upload documents name
-	String IMAGE="images1.jpg";
 	String UPLOAD_ROOT_ORG="Test_Data_Sample_Organizations-1.csv";
-	String UPLOAD_USERS_ROOT_ORG="Sample_Users (44).csv";
+	String UPLOAD_USERS_ROOT_ORG="Test_Data_Sample_Root_Org_Users.csv";
 	String UPLOAD_SUB_ORG="Test_Data_Sample_Sub_Organizations-1.csv";
-	String UPLOAD_USERS_SUB_ORG="Sample_Users (45).csv";
+	String UPLOAD_USERS_SUB_ORG="Test_Data_Sample_Sub_Org_Users.csv";
 	String FILTER_CREATION="Creation";
 	String FILTER_CONSUMPTION="Consumption";
 	String A_HOME_URL="https://staging.ntp.net.in/home";
-	String SEARCH_COURSE="Course";
+	String SEARCH_COURSE="courseA";
 	String SEARCH_LIBRARY="Library";
 	String SEARCH_COURSES="Courses";
 	String SEARCH_LIBRARIES="content";	
-	String[] searchInput = new String[]{"Book","Story","Upload content","Collections","lesson plan"};
-	String UPLOAD_PROFILE_PIC="C:\\Users\\TEJAS46\\Pictures\\motogp.png";
-	String[] SEARCH_USERS=new String[]{"mentor","admin","public","creator"};
+	String[] searchInput = new String[]{"BookA","Automation content","Automation Collection","lesson plan","Automation Resource"};
+	String UPLOAD_PROFILE_PIC="images1";
+	String[] SEARCH_USERS=new String[]{"mentor","admin","public user","creator","reviewer"};
 	String[] SEARCH_ORG=new String[]{"Org","Root Org"};
 	String SUMMARY_EDIT ="Profile Summary is edited";
 	String EXP_OCCUPATION="Test Occupation";
 	String EXP_DESIGNATION="Test Designation";
 	String EXP_ORG="Test Organization";
-	String AUDIO="SampleAudio_0.4mb.mp3";
-	
+
 	String[] ADDRESS=new String[]{"Test #15","Test Vasanthnagar","Test Bangalore","Test Karnataka","Test India","Test 560035"};
 	String ENDORSE_USER="TestFlagReviewer  N";
-	String BOOK="book";
+	String BOOK="Book";
 	String COURSE="Course";
-	String RESOURCE="resource";
-	String COLLECTION="collection";
-	String LESSONPLAN="lesson plan";
-	String UPLOADCONTENT="upload content";
+	String RESOURCE="Resource";
+	String COLLECTION="Collection";
+	String LESSONPLAN="Lesson Plan";
+	String UPLOADCONTENT="Upload Content";
 	String PUBLISHER="Test Automation Publisher";
-	String[] DIAL_CODE={"UH8FPE","XGDMVD","4EP38B","7DUAEA","ACZHK9","DC5PR8","GBAWX7","JAG546","M9LCA5","Q8RJG4"};
+	//String[] DIAL_CODE={"A9KDTL","D8QKZK","4B9YGN","7AF6MM","XCYJ4Q","REN4RS","UDTBXR","Z2T38D","31YAEC","T4HMVF"};
+	String[] DIAL_CODE={"4B9YGN","A9KDTL","XCYJ4Q"};
 	String LESSON_NAME="Automation Lesson Plan";	
+
 	//Added for content upload
 	String MP4_CONTENT_NAME="Automation Content Mp4";
-	String SEARCH_CONTENT_IMAGE="content image1";
-	String SEARCH_RESOURCE_IMAGE="content image";
+	String SEARCH_CONTENT_IMAGE="content image";
+	String SEARCH_RESOURCE_IMAGE="resource image";
 	String SEARCH_COURSE_IMAGE="course image";
+	String SEARCH_BOOK_IMAGE="book image";
+	String LESSON_PLAN_IMAGE="lesson plan";
+	String BOOK_IMAGE="book image.jpg";
+	//String LESSON_PLAN_IMAGE="lesson plan.jpg";
+
 	String MP4="MP4";
 	String UPLOAD_MP4="Upload content-mp4.mp4";
 	String WEBM="WEBM";
@@ -88,15 +122,14 @@ public interface IAutoConst {
 	String UPLOAD_H5P="fill-in-the-blanks-837.h5p";
 	String PDF="PDF";
 	String UPLOAD_PDF="samplepdf.pdf";
-	//added for announcement page
-	
+	String SEARCH_COLLECTION_IMAGE="Collection Image";
 	String UPLOAD_MP4_URL="https://drive.google.com/file/d/16O6wbBoAum6NXdqTSXVZxh1SUAQNV1ok/view?usp=sharing";
-	
-	//Added for Test case 13
+
+	//Added for Send For Review Popup
 	String [] REVIEW_COMMENTS={"Inappropriate course","Empty Course","Duplicate Course","Not Suitable for Children"};
-	
+
 	//Added for announcement
-	
+	String IMAGE="images1.jpg";
 	String DESCRIPTION="DESCRIPTION";
 	String ENTERURL="ENTERURL";
 	String UPLOADDOCUMENT="UPLOADDOCUMENT";
@@ -108,11 +141,81 @@ public interface IAutoConst {
 	String REQUESTCHANGES="request changes";
 
 	//Adding for Public user 
-	String TEST_MAIL_ID="testmemeight@gmail.com";
+	//String TEST_MAIL_ID="testmemeight@gmail.com";
+	String TEST_MAIL_ID="testforgot@YOPmail.com";
 	String [] CONTENT_TYPE={"//sui-select-option/..//span[.='TextBook']","//sui-select-option/..//span[.='Collection']","//sui-select-option/..//span[.='LessonPlan']","//sui-select-option/..//span[.='Resource']"};
+	String PUBLISHED="Published";
+String SHAREDVIALINK="SharedViaLink";
 	
-	//added on 18 Sep 2018 for deletion.
-	String DRAFTS="drafts";
-	String PUBLISHED="published";
-	String ALLMYCONTENT="allMyContent";
+	//Added on Maintenance - OCT 23
+	String ALL_MY_CONTENT="All My Content";
+	String DRAFTS="Drafts";
+	String REVIEW_SUBMISSION="Review Submissions";
+	String ALL_UPLOADS="All Uploads";
+	String LIMITED_PUBLISHING="Limited Publishing";
+	String UP_FOR_REVIEW="Up for review";
+	String COLLABORATIONS="Collaborations";
+	String COURSE_BATCHES="Course Batches";
+
+	//Added for Audio Upload Regression Test case 78 
+	String AUDIO_UPLOAD="school chale hum.mp3";
+
+	//Added for Audio Upload Regression Test case 79
+	String VIDEO_UPLOAD="https://drive.google.com/uc?export=download&id=1RYgA8UbwKukgLSLhDVzvTGS0-wGj98cL";
+
+	//Merged from Ajith - 25/09/2018
+	String HINDI_LABEL="डायल कोड दर्ज करें ";
+
+	//Nov 25
+	String ROOT_ORG="Upload_root_org";
+	String SUB_ORG="Upload_sub_org";
+
+	String ID="ID";
+
+	//Dec 15
+	String [] CONTENT_ARRAY={"CourseA","BookA","LessonA","Automation Content","Automation Collection","Automation Resource"};
+
+	String [] UPLOAD_CONTENTS = {"youtube","mp4","pdf"};
+
+	String[] CONTENT_TO_FIND = {"Collection","TextBook","LessonPlan","Course","Resource"};
+
+	//Feb 18
+	String SUNBIRD_APIKEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI2NTU0NDQ5ZWI0MGQ0YTI4ODQ3YzAzYWZlNmJjMmEyOCJ9.YhnTaDw_xv"
+			+ "f8Q5S66QiO71-5WeqLaTPv-vvNZSwBqLk";
+	String DIKSHA_APIKEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjNDkyM2Y1Mjg1ZmY0NDdjYmYxMzgwNTQyM2ExZTk4YSJ9.hwQiG6OIFoIJ2O9ec6kau09ltJ-5xA5fWi6aM6NoLEU";
+	String SUNBIRD_ROOTORGID="012550072256020480149";
+	String DIKSHA_ROOTORGID="012550822176260096119";
+	String SUNBIRD_FRAMEWORK="rjt_k-12_1";
+	String DIKSHA_FRAMEWORK="NCF";
+
+	String[] VIEWALL_CATEGORY= {"//*[contains(text(),'Featured Content')]/following::button[1]",
+			"//h4[contains(.,'Textbooks')]/..//button[contains(.,'View All')]",
+			"//*[contains(text(),'Teaching Material')]/following::button[1]",
+			"//*[contains(text(),'Learning Material')]/following::button[1]",
+	"//*[contains(text(),'Practice and Test Material')]/following::button[1]"};
+
+	String UPCOMING_COURSE_BATCH = GenericFunctions.readFromNotepad("./testData/upcomingBatchCourse.txt");
+	String ONGOING_COURSE_BATCH = GenericFunctions.readFromNotepad("./testData/ongoingBatchCourse.txt");
+
+
+	String[] SEARCH_QUESTIONTYPE={"MCQ","FTB","MTF"};
+
+	String SUBORG_COURSE_MENTOR="Suborg 2 course mentor";
+	String SUBORG_CONTENT_REVIEWER="Suborg 2 Content Reviewer";
+	
+	String[] FILTER_NAME= {"//label[contains(text(),'Purpose')]/following::div[1]","//label[contains(text(),'Medium')]/following::div[1]", 
+			"//label[contains(text(),'Class')]/following::div[1]", "//label[contains(text(),'Subject')]/following::div[1]", "//sui-multi-select[@id='channel']","//input[@id='treePicker']"};
+	
+	String[] FILTER_OPTION= {"//label[contains(text(),'Purpose')]/following::div[@class='p-5 option-text'][1]","//label[contains(text(),'Medium')]/following::div[@class='p-5 option-text'][1]","//label[contains(text(),'Class')]/following::div[@class='p-5 option-text'][1]"
+						,"//label[contains(text(),'Subject')]/following::div[@class='p-5 option-text'][1]",	"//label[contains(text(),'Organization')]/following::div[@class='p-5 option-text'][1]"} ;
+	
+	String MENTOR_DIFFERENT_SUBORG="suborg_mentor_sun 2";
+	String MEMBER_DIFFERENT_SUBORG="suborg_reviewer_sun 4";
+	
+	String ROOT_ORG_USER="content creator";
+	
+	String INVALID_URL= "https://vimeo.com/325639357";
+	
+	String [] CONTENT_NAME= {"//span[contains(.,'Book')]/following::i[@class='trash large icon']","//span[contains(.,'Auto Content')]/following::i[@class='trash large icon']"};
+	String TEXTBOOK ="TextBook";
 }

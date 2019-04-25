@@ -12,10 +12,12 @@
 
 package org.generic;
 
+import org.apache.velocity.util.StringUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.startup.BaseTest;
+import org.testng.IClass;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -31,6 +33,13 @@ public class TestListener extends BaseTest implements ITestListener {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
     }
     
+    private static String getTestClassName(ITestResult iTestResult)
+    {
+    	//return iTestResult.getTestName().toString();
+    	//return iTestResult.getTestClass().toString();
+    	return iTestResult.getMethod().getRealClass().getName();
+    	
+    }
     //Before starting all tests, below method runs.
     
 	@Override
@@ -51,22 +60,33 @@ public class TestListener extends BaseTest implements ITestListener {
  
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        System.out.println("I am in onTestStart method " +  getTestMethodName(iTestResult) + " start");
+        System.out.println("I am in onTestStart method " +  getTestMethodName(iTestResult) + " start , I am in onTestStart class " +  getTestClassName(iTestResult) + " start");
+        
         //Start operation for extentreports.
-        ExtentTestManager.startTest(iTestResult.getMethod().getMethodName(),"");
+        ExtentTestManager.startTest(iTestResult.getMethod().getMethodName(),iTestResult.getTestClass().toString());
+        //Get the class Name of the Test method
+       // ExtentTestManager.startTest(iTestResult.getTestName(),"");
+       // ExtentTestManager.startTest(iTestResult.getTestClass().toString(),"");
+        System.out.println("Print on Test Start"+iTestResult.getTestClass().toString());
     }
  
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        System.out.println("I am in onTestSuccess method " +  getTestMethodName(iTestResult) + " succeed");
+        System.out.println("I am in onTestSuccess method " +  getTestMethodName(iTestResult) + " succeed , I am in onTestSuccess class " +  getTestClassName(iTestResult) + " succeed");
+       
         //Extentreports log operation for passed tests.
-        ExtentTestManager.getTest().log(LogStatus.PASS, "Test passed");
+        
+       
+        
+        ExtentTestManager.getTest().log(LogStatus.PASS, getTestClassName(iTestResult).toString()+" Test passed");	
     }
  
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println("I am in onTestFailure method " +  getTestMethodName(iTestResult) + " failed");
+        System.out.println("I am in onTestFailure method " +  getTestMethodName(iTestResult) + " failed, I am in onTestFailure class " +  getTestClassName(iTestResult) + " failed");
+        
  
+        
         //Get driver from BaseTest and assign to local webdriver variable.
         Object testClass = iTestResult.getInstance();
         WebDriver webDriver = ((BaseTest) testClass).getDriver();
@@ -74,9 +94,12 @@ public class TestListener extends BaseTest implements ITestListener {
         //Take base64Screenshot screenshot.
         String base64Screenshot = "data:image/png;base64,"+((TakesScreenshot)webDriver).
                 getScreenshotAs(OutputType.BASE64);
- 
+       //ExtentTestManager.startTest(iTestResult.getTestClass().toString(),"");
+       
         //Extentreports log and screenshot operations for failed tests.
-        ExtentTestManager.getTest().log(LogStatus.FAIL,"Test Failed",
+       
+        
+        ExtentTestManager.getTest().log(LogStatus.FAIL,getTestClassName(iTestResult)+" Test Failed",
                 ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
         
         String image = ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot);
@@ -88,14 +111,17 @@ public class TestListener extends BaseTest implements ITestListener {
  
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-        System.out.println("I am in onTestSkipped method "+  getTestMethodName(iTestResult) + " skipped");
+        System.out.println("I am in onTestSkipped method "+  getTestMethodName(iTestResult) + " skipped , I am in onTestSkipped class "+  getTestClassName(iTestResult) + " skipped");
+        
         //Extentreports log operation for skipped tests.
-        ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
+        ExtentTestManager.getTest().log(LogStatus.SKIP, getTestClassName(iTestResult)+" Test Skipped");
     }
  
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
         System.out.println("Test failed but it is in defined success ratio " + getTestMethodName(iTestResult));
     }
+    
+    
     
 }

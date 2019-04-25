@@ -4,7 +4,7 @@
 
 * @author: Ajith Manjunath
 
-* Date: 05/10/2018
+* Date: 09/14/2018
 
 * Purpose: Contains all the methods which will help extent reporting. 
 */
@@ -24,7 +24,7 @@ public class ExtentManager {
         if(extent == null){
             //Set HTML reporting file location
             String workingDir = System.getProperty("user.dir");
-            extent = new ExtentReports(workingDir+"\\ExtentReports\\ExtentReportResults.html", true);
+            extent = new ExtentReports(workingDir+"/extentReports/extentReportResults.html", true);
         }
         return extent;
     }

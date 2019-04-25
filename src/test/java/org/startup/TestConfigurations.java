@@ -13,7 +13,10 @@ package org.startup;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
+
 import org.apache.log4j.Logger;
 import org.testng.annotations.BeforeClass;
 
@@ -38,15 +41,30 @@ public class TestConfigurations
 
 
 			try  {
-				APPCONFIG.load(new FileInputStream(".\\Application.config"));
+				Path currentPath = Paths.get("");
+				String strCurrentPath = currentPath.toAbsolutePath().toString();
+				
+				System.out.println("strCurrentPath:: " + strCurrentPath);
+				
+				System.out.println("Before Reading AppConfig");
+				APPCONFIG.load(new FileInputStream("./application.config"));
+				System.out.println("After Reading AppConfig");
 			}  catch (FileNotFoundException e) {
+				System.out.println("FileNotFoundException");
+				e.printStackTrace();
 				log.error("Method: initTestConfiguration ::" + "file not found exception occured = " + e
 						+ " Line Number = " +  Thread.currentThread().getStackTrace()[3].getLineNumber());
 			}  catch (IOException e) {
+				System.out.println("IOException");
+				e.printStackTrace();
 				log.error("Method: initTestConfiguration ::" + "IO exception occured = " + e
 						+ " Line Number = " +  Thread.currentThread().getStackTrace()[3].getLineNumber());
+			} catch (Exception ex) {
+				ex.printStackTrace();
 			}
 
+			System.out.println("APPCONFIG.size():: " + APPCONFIG.size());
+			
 			try {
 				if (APPCONFIG.size() > 0) {
 
@@ -54,6 +72,7 @@ public class TestConfigurations
 					COLUMNHEADERSPROP.load(ColumnHeaderFile);
 					FileInputStream OtherConfigFile = new FileInputStream(APPCONFIG.getProperty("OtherConfigurationsPath"));
 					OTHERCONFIGPROP.load(OtherConfigFile);
+					System.out.println("After loading Other Config Prop");
 
 				}
 			} catch (Exception e) {

@@ -1,21 +1,10 @@
-/**
-
-* Created by Qualitrix Technologies Pvt Ltd.
-
-* @author: Abhinav kumar singh
-
-* Date: 06/26/2018
-
-* Purpose: All the locators of Announcement page.
-*/
-
-
 package org.page;
 
-
 import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
 public class CreatorAnnouncementPage {
@@ -28,25 +17,31 @@ public class CreatorAnnouncementPage {
 	}
 	
 	
-	@FindBy(xpath="//a[text()='Announcement dashboard']")
+	//Added on 22-Oct0-2018
+	@FindBy(xpath="//*[@class='close icon']")
+	public WebElement CloseAnnouncementPopup;
+	
+	
+	
+	//oct 12 v1.11.0
+	@FindBy(xpath="//div[contains(@class,'dropdown right top pointing')]/..//a[contains(.,'Announcement dashboard')]")
 	public WebElement announcement_Dashboard;
 	
 	@FindBy(xpath="//span[text()='CREATE ANNOUNCEMENT']")
 	public WebElement create_Announcement;
 	
 	@FindBy(xpath="//input[@placeholder=\"Please enter relevant title for this announcement (Max: 100 chars)\"]")
-	//@FindBy(xpath="//div[@class='create-ann-form-scroller']//input[@class='ng-dirty ng-valid ng-touched' and @formcontrolname='title']")
 	public WebElement enterTitle;
 	
 	@FindBy(xpath="//input[@placeholder='Please enter organisation/department that has sent the announcement']")
-	//@FindBy(xpath="//div[@class='create-ann-form-scroller']//input[@class='ng-dirty ng-valid ng-touched' and @formcontrolname='from']")
 	public WebElement enterOrg;
 	
-	//@FindBy(xpath="//sui-select[@class='selection ui dropdown ng-pristine ng-invalid ng-touched']")
 	@FindBy(xpath="//div[text()='Select announcement type']")
 	public WebElement announcementType;
 	
-	@FindBy(xpath="//sui-select-option[@class='item']/span[text()='Order']")
+	//OCT 12 v1.11.0
+	@FindBy(xpath="//div[text()='Select announcement type']/..//sui-select-option")
+	//@FindBy(xpath="//sui-select-option[@class='item']/span[text()='Order']")
 	public WebElement announcementTypeOrder;
 	
 	@FindBy(xpath="//sui-select-option[@class='item']/span[text()='Circular']")
@@ -62,28 +57,32 @@ public class CreatorAnnouncementPage {
 	@FindBy(xpath="//input[@placeholder='Enter web url (starting with http or https)']")
 	public WebElement enterUrl;
 	
-	//@FindBy(xpath="//span[text()='UPLOAD ATTACHMENT']")
-	@FindBy(xpath="(//span[text()='UPLOAD ATTACHMENT'])[8]")
+	
+	//Updated on 22-Oct-2018
+		@FindBy(xpath="(//label[.='UPLOAD ATTACHMENT']/..//span[.='UPLOAD ATTACHMENT'])[2]")
+	//@FindBy(xpath="(//span[text()='UPLOAD ATTACHMENT'])[8]")
 	public WebElement uploadDocument;
 	
 	@FindBy(xpath="//button[contains(text(),'SELECT RECIPIENTS')]")
-	//@FindBy(xpath="(//button[contains(text(),'SELECT RECIPIENTS')])[2]")
 	public WebElement selectRecipient;
 	
-	//@FindBy(xpath="//input[@placeholder='Search for location' and @class='ng-valid ng-touched ng-dirty']")
 	@FindBy(xpath="//input[@placeholder='Search for location']")
 	public WebElement searchForLocation;
 	
-	@FindBy(xpath="//sui-checkbox[@class='ui checkbox ng-untouched ng-pristine ng-valid']")
-	public WebElement checkLocation;
+	//OCT 12 v1.11.0
+	@FindBy(xpath="//sui-checkbox//label")
+	//@FindBy(xpath="//sui-checkbox[@class='ui checkbox ng-untouched ng-pristine ng-valid']")
+	public List<WebElement> checkLocation;
 	
-	@FindBy(xpath="//div[text()='CONFIRM RECIPIENTS']")
+	@FindBy(xpath="//button[contains(.,'CONFIRM RECIPIENTS')]")
+	//@FindBy(xpath="//div[text()='CONFIRM RECIPIENTS']")
 	public WebElement confirmRecipients;
 	
 	@FindBy(xpath="//span[text()='BACK']")
 	public WebElement back;
 	
-	@FindBy(xpath="//div[text()='PREVIEW ANNOUNCEMENT']")
+	@FindBy(xpath="//button[contains(.,'PREVIEW ANNOUNCEMENT')]")
+	//@FindBy(xpath="//div[text()='PREVIEW ANNOUNCEMENT']")
 	public WebElement previewAnnouncement;
 	
 	@FindBy(xpath="//span[contains(text(),'VIEW')]")
@@ -92,17 +91,18 @@ public class CreatorAnnouncementPage {
 	@FindBy(xpath="//button[contains(text(),'SEND ANNOUNCEMENT')]")
 	public WebElement sendAnnouncement;
 	
+	
 	@FindBy(xpath="//button[@class='ui primary basic button announcement-button btn-width-34 approve']")
 	public WebElement announcementcreatedConfirmation;
 	
-	@FindBy(xpath="//button[@class=\"ui basic button announcement-button btn-width-26 announcement-button-text\"]")
+	@FindBy(xpath="//button[@class='ui basic button announcement-button btn-width-26 announcement-button-text']")
 	public WebElement stopCreatingAnnouncementMessageYes;
 	
-	@FindBy(xpath="//button[@class=\"ui button primary announcement-button btn-width-26 close\"]")
+	@FindBy(xpath="//button[@class='ui button primary announcement-button btn-width-26 close']")
 	public WebElement stopCreatingAnnouncementMessageNo;
 	
 	
-	@FindBy(xpath="//div[@class=\"item headerDropdownProfile\"]")
+	@FindBy(xpath="//div[@class='item headerDropdownProfile']")
 	public WebElement userNameInDropDown;
 	
 	@FindBy(xpath="//a[text()='Profile']")
@@ -111,33 +111,27 @@ public class CreatorAnnouncementPage {
 	@FindBy(xpath="//a[text()='Workspace']")
 	public WebElement workspaceInDropDown;
 	
-	@FindBy(xpath="//a[text()='My Activity']")
+	@FindBy(xpath="(//a[text()='My Activity'])[2]")
 	public WebElement myActivityInDropdown;
 	
-	@FindBy(xpath="//td[@class=\"cursor-pointer red-text-color-sunbird\"]")
-	public WebElement deleteAnnouncementButton;
+	@FindBy(xpath="//td[contains(.,'Delete')]")
+	//@FindBy(xpath="//td[@class=\"cursor-pointer red-text-color-sunbird\"]")
+	public List<WebElement> deleteAnnouncementButton;
 	
 	@FindBy(xpath="//td[@class=\"cursor-pointer red-text-color-sunbird\"]/../td[1]")
 	public WebElement selectAnnouncementName;
 	
-	@FindBy(xpath="//td[@class=\"cursor-pointer blue-text-color-sunbird\"]")
-	public WebElement resendAnnouncementButton;
-	
-	@FindBy(xpath="//td[@class=\"cursor-pointer blue-text-color-sunbird\"]/../td[1]")
-	public WebElement resendAnnouncementName;
-	
-	@FindBy(xpath="//div[@class=\"header padding-top-5 segment-heading\"]")
+	//Mar 18 2019
+	@FindBy(xpath="//p[contains(@class,'announcement-type')]/following::div[contains(@class,'segment-heading')]")
 	public List<WebElement> reviewAnnouncement;
 	
-	@FindBy(xpath="//div[@class='header padding-top-5 segment-heading']")
-	public WebElement reviewAnnouncementN;
-	
-	@FindBy(xpath="//a[text()='See All']")
+	//March 18 2019
+	@FindBy(xpath="//a[contains(text(),'See All')]")
 	public WebElement seeAllAnnouncement;
 	
-	@FindBy(xpath="//i[@class=\"right chevron icon\"]")
-	public WebElement nextarrowOnHomePage;
-	
+	@FindBy(xpath="//i[@class='right chevron icon']")
+	public WebElement viewNextPage;
+		
 	@FindBy(xpath="//table[@class=\"ui padded table\"]/thead/tr/th[1]")
 	public WebElement announcementTableName;
 	
@@ -147,17 +141,53 @@ public class CreatorAnnouncementPage {
 	@FindBy(xpath="//table[@class=\"ui padded table\"]//tr[@class=\"table-list-name-ann\"]/td")
 	public WebElement announcementTableNameContent;
 	
-	@FindBy(xpath="//table[@class='ui padded table']//td[@class='cursor-pointer blue-text-color-sunbird']")
+	@FindBy(xpath="//table[@class=\"ui padded table\"]//td[@class=\"cursor-pointer blue-text-color-sunbird\"]")
 	public WebElement announcementTableActionsContent;
 	
-	//@FindBy(xpath="//div[@class='padding-top-10 segment-heading']")
-	@FindBy(xpath="//div[@class='header padding-top-5']/div")
+	@FindBy(xpath="//div[@class='pt-10 segment-heading']")
 	public WebElement announcementReview;
 	
 	
+	@FindBy(xpath="//td[contains(.,'Resend')]")
+	//@FindBy(xpath="//td[@class=\"cursor-pointer blue-text-color-sunbird\"]")
+	public List<WebElement> resendAnnouncementButton;
+	
+	@FindBy(xpath="//td[@class=\"cursor-pointer blue-text-color-sunbird\"]/../td[1]")
+	public WebElement resendAnnouncementName;
 	
 	
+	//Dec 11
+	@FindBy(xpath="//div[contains(@class,'5 segment-heading')]")
+	//@FindBy(xpath="//div[@class='header padding-top-5 segment-heading']")
+	public WebElement reviewAnnouncementN;
 	
+	@FindBy(xpath="//i[@class='close icon']")
+	public WebElement popupCloseIcon;
 	
+	@FindBy(xpath="//button[contains(.,'EDIT RECIPIENTS')]")
+	//@FindBy(xpath="//button[.=' EDIT RECIPIENTS ']")
+	public WebElement editRecipients;
 
+	
+	// @author Sachin
+	@FindBy(xpath="//input[contains(@formcontrolname,'title')]")
+	public WebElement resendTitle;
+	
+	// @author Sachin
+	@FindBy(xpath="(//td[contains(@tabindex,'0')])[1]")
+	public WebElement editedAnnouncement;
+	
+	// @author Sachin
+	@FindBy(xpath="(//button[contains(@type,'button')])[11]")
+	public WebElement selectRecipients;
+	
+	@FindBy(xpath="//h4[contains(.,'Announcement Sent')]")
+	public WebElement announcementSent;
+	
+	@FindBy(xpath="//button[contains(.,'GOT IT')]")
+	public WebElement gotIt;
+	
+	@FindBy(xpath="//strong[contains(.,'Announcement cancelled successfully')]")
+	public WebElement announcementCancelledMessage;
+	
 }

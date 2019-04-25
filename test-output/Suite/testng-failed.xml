@@ -6,13 +6,13 @@
   </listeners>
   <test name="Test(failed)">
     <classes>
-      <class name="org.testscripts.EditResourceAndVerify">
+      <class name="org.testscript.workspace.ConsumeOpenCourseByPublicUserAndCheckCourseStatAsMentor">
         <methods>
-          <include name="editResourceAndVerify"/>
+          <include name="consumeOpenCourseByPublicUserAndCheckCourseStatAsMentor"/>
           <include name="closeApplication"/>
           <include name="openApplication"/>
         </methods>
-      </class> <!-- org.testscripts.EditResourceAndVerify -->
+      </class> <!-- org.testscript.workspace.ConsumeOpenCourseByPublicUserAndCheckCourseStatAsMentor -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

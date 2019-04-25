@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="org.generic.TestListener"></listener>
+	</listeners>
+	<test thread-count="5" name="Test">
+		<classes>
+			<!-- <class name="org.testscript.coursepage.CreateAndVerifyTheBatchDetails"/> 
+				<class name="org.testscript.coursepage.VerifyBatchEditingWhenOpenedFromCourseBatches"/> 
+				<class name="org.testscript.coursepage.SearchCourse"/> <class name="org.testscript.coursepage.AddNotesToContentInCourseAndSearch"/> 
+				<class name="org.testscript.coursepage.VerifyBatchEdittingInCourseBatches"/> 
+				<class name="org.testscript.coursepage.EdittingOngoingOpenBatchesWithStartDateOnly"/> 
+				<class name="org.testscript.coursepage.VerifyAvailabilityOfDeletedCourseInLibrary"/> 
+				<class name="org.testscript.coursepage.AccessOnAllPagesAfterLogin"/> 
+				<class name="org.testscript.coursepage.CreateIOBatchwithStartDateAsFutureDate"/> 
+				<class name="org.testscript.coursepage.SearchWithQRCodeInExplorePage"/> 
+				<class name="org.testscript.coursepage.AddMemberAndMentorVerifyInExistingBatchAndUpcomingBatch"/> 
+				<class name="org.testscript.coursepage.SearchCourseUsingFilter"/> 
+				<class name="org.testscript.coursepage.VerifyCourseCanBeSharedAndUserCanAccessItViaSharedUrl"/> 
+				<class name="org.testscript.coursepage.ToVerifySliderButtonAndCourseCardDetailsInCoursePage"/> 
+				<class name="org.testscript.coursepage.EdittingOngoingInviteOnlyBatchesAfterCreating"/> 
+				<class name="org.testscript.coursepage.AddMemberAndVerifyInExistingBatch"/> 
+				<class name="org.testscript.coursepage.DisplayLatestCourse"/> <class name="org.testscript.coursepage.SearchWithQRcode"/> 
+				<class name="org.testscript.coursepage.CheckTheCourseDetailsOnCourseStructure"/> 
+				<class name="org.testscript.coursepage.VerifyUserIsAbleToClearAllNotesTaken"/> 
+				<class name="org.testscript.coursepage.Verifyavailibilityofshareicon"/> <class 
+				name="org.testscript.coursepage.AddNotesToContentInCourseAndUpdate"/> <class 
+				name="org.testscript.coursepage.VerifyAvailabilityOfPreviousAndNextIconInMyCourse"/> 
+				<class name="org.testscript.coursepage.VerifyUserIsAbleToViewEditSearchAndDeleteTheNotes"/> 
+				<class name="org.testscript.coursepage.VerifyORGNameInCourseTOCPage"/> <class 
+				name="org.testscript.coursepage.VerifyCourseResumeFromWhereLeft"/> <class 
+				name="org.testscript.coursepage.AddNotesToCourseAndDelete"/> <class name="org.testscript.coursepage.VerifyUserConsumptionStatusAfterHalfCompletion"/> 
+				<class name="org.testscript.coursepage.ApplyFilterInCoursePage"/> <class 
+				name="org.testscript.coursepage.VerifyClearOptionInAddNotesInCoursePage"/> 
+				<class name="org.testscript.coursepage.VerifyFiltersAreSameInEachIndividualPageAndAllViewAllSections"/> 
+				<class name="org.testscript.coursepage.VerifyMentorAbleToPreviewTheCourseWithoutCreatingAnyBatch"/> 
+				<class name="org.testscript.coursepage.ToVerifyAfterRemovingMembersMentorCanUpdateBatch"/> 
+				<class name="org.testscript.coursepage.VerifyViewAllOptionUnderOpenForEnrollmentCourseCategory"/> 
+				<class name="org.testscript.coursepage.VerifyPageLanguageTranslate"/> <class 
+				name="org.testscript.coursepage.VerifyBatchIsEditableWhenOpenedFromCoursesSection"/> -->
+
+
+			<!-- <class name="org.testscript.coursepage.VerifyORGNameInCourseTOCPage"/> 
+				<class name="org.testscript.coursepage.CheckTheCourseDetailsOnCourseStructure"/> 
+				<class name="org.testscript.coursepage.VerifyCourseCreationDatadisplayedCorrectly"/> 
+				<class name="org.testscript.coursepage.CheckAndConsumeTheContentAfterCreation"/> 
+				<class name="org.testscript.coursepage.ToVerifyAfterRemovingMembersMentorCanUpdateBatch"/> 
+				<class name="org.testscript.coursepage.VerifyBatchEditingWhenOpenedFromCourseBatches"/> 
+				<class name="org.testscript.coursepage.VerifyBatchIsEditableWhenOpenedFromCoursesSection"/> 
+				<class name="org.testscript.coursepage.CreateAndVerifyTheBatchDetails"/> 
+				<class name="org.testscript.coursepage.ApplyFilterInCoursePage"/> 
+				<class name="org.testscript.coursepage.ToVerifySliderButtonAndCourseCardDetailsInCoursePage"/> 
+				<class name="org.testscript.coursepage.VerifyPageLanguageTranslate"/> 
+				<class name="org.testscript.coursepage.VerifyAvailabilityOfPreviousAndNextIconInMyCourse"/> 
+				<class name="org.testscript.coursepage.VerifyAvailabilityOfDeletedCourseInLibrary"/> 
+				<class name="org.testscript.coursepage.VerifySetAndResetOfFiltersOnCoursePage"/> 
+				<class name="org.testscript.coursepage.VerifyCourseResumeFromWhereLeft"/> 
+				<class name="org.testscript.coursepage.VerifyUserConsumptionStatusAfterHalfCompletion"/> 
+				<class name="org.testscript.coursepage.AddMemberAndVerifyInExistingBatch"/> 
+				<class name="org.testscript.coursepage.AddMemberAndMentorVerifyInExistingBatchAndUpcomingBatch"/> 
+				<class name="org.testscript.coursepage.EdittingOngoingInviteOnlyBatchesAfterCreating"/> 
+				<class name="org.testscript.coursepage.EdittingOngoingOpenBatchesWithStartDateOnly"/> 
+				<class name="org.testscript.coursepage.VerifyBatchEdittingInCourseBatches"/> 
+				<class name="org.testscript.explorecoursepage.VerifyUserRedirectionToLoginPage"/> 
+				<class name="org.testscript.explorecoursepage.CarryForwardSearchFilterInExploreCoursePage"/> 
+				<class name="org.testscript.explorecoursepage.SearchContentWithFiltersInExploreCoursePage"/> 
+				<class name="org.testscript.explorecoursepage.VerifySignInPopupInExploreCourseEnrollButton"/> 
+				<class name="org.testscript.explorecoursepage.VerifyLibraryContentInExploreCoursePage"/> 
+				<class name="org.testscript.explorecoursepage.VerifyTOCInExploreCoursePage"/> 
+				<class name="org.testscript.getpage.NavigateToGetStartedAndExploreDiksha"/> 
+				<class name="org.testscript.getpage.VerifyNavigateToGetPage"/> 
+				<class name="org.testscript.landingpage.SameUserDetailsIsNotAllowedWhileSignup"/> 
+				<class name="org.testscript.librarypage.VerifyViewAllSectionInLibraryPageBasedOnCount"/> 
+				<class name="org.testscript.librarypage.ApplyFilterForSectionInlibraryPage"/> 
+				<class name="org.testscript.librarypage.ToVerifyViewAllOptionUnderTextbooksInLibrary"/> 
+				<class name="org.testscript.librarypage.ApplyFilterInTeachingMaterialSectionInLibraryPage"/> 
+				<class name="org.testscript.librarypage.ViewAllSectionInLibrary"/> 
+				<class name="org.testscript.librarypage.VerifyConsumptionOfOldContentAndNewContent"/> 
+				<class name="org.testscript.coursepage.SearchWithQRcode"/>
+				 <class name="org.testscript.librarypage.CreateResourceWith10MCQ10FTB10MTF"/> 
+				<class name="org.testscript.librarypage.VerifyAvailabilityOfDeletedCollectionInLibrary"/> 
+				<class name="org.testscript.librarypage.VerifyAvailabilityOfDeletedContentInLibrary"/> 
+				<class name="org.testscript.librarypage.SearchForTheLatestUpdatedContent"/> 
+				<class name="org.testscript.librarypage.SearchForTheLatestUpdatedlessonplan"/> 
+				<class name="org.testscript.librarypage.SearchForTheLatestUpdatedCollection"/> 
+				<class name="org.testscript.librarypage.SearchForTheLatestUpdatedBook"/> 
+				<class name="org.testscript.profilepage.VerifyTrainingsAttendedSectionDataIsDisplayed"/> -->
+
+<class name="org.testscript.workspace.ConsumeOpenCourseByPublicUserAndCheckCourseStatAsMentor"/>
+
+<!--  
+<class name="org.testscript.coursepage.EdittingOngoingOpenBatchesWithStartDateOnly"/>
+<class name="org.testscript.librarypage.ViewAllSectionInLibrary"/>
+<class name="org.testscript.librarypage.VerifyAvailabilityOfDeletedCollectionInLibrary"/>
+<class name="org.testscript.librarypage.VerifyConsumptionOfOldContentAndNewContent"/>
+<class name="org.testscript.librarypage.SearchForTheLatestUpdatedContent"/>
+<class name="org.testscript.coursepage.VerifyCourseCreationDatadisplayedCorrectly"/>
+-->
+	<!-- <class name="org.testscript.coursepage.VerifyUserConsumptionStatusAfterHalfCompletion"/> 
+		<class name="org.testscript.coursepage.VerifyCourseResumeFromWhereLeft"/> 
+		<class name="org.testscript.coursepage.CheckAndConsumeTheContentAfterCreation"/> 
+		 
+		<class name="org.testscript.librarypage.ApplyFilterInTeachingMaterialSectionInLibraryPage"/> 
+		 
+		 
+		 
+		 
+		<class name="org.testscript.librarypage.SearchForTheLatestUpdatedlessonplan"/> 
+		<class name="org.testscript.librarypage.SearchForTheLatestUpdatedBook"/> 
+		<class name="org.testscript.librarypage.SearchForTheLatestUpdatedCollection"/> 
+		<class name="org.testscript.librarypage.CreateResourceWith10MCQ10FTB10MTF"/> 
+		<class name="org.testscript.coursepage.AddMemberAndVerifyInExistingBatch"/> 
+		<class name="org.testscript.coursepage.AddMemberAndMentorVerifyInExistingBatchAndUpcomingBatch"/> 
+		<class name="org.testscript.coursepage.EdittingOngoingInviteOnlyBatchesAfterCreating"/> 
+		<class name="org.testscript.coursepage.VerifyBatchEdittingInCourseBatches"/> -->
+
+
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
